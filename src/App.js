@@ -13,12 +13,18 @@ const LeftComponent = ({leftTitle}) => {
     <>
 
     <h1>{leftTitle}</h1>
-    
-    
+
     <RegularList 
-    items={products}
-    resourceName="product"
-    itemComponent={SmallProductListItem}
+      items={people}
+      resourceName="person"
+      itemComponent={SmallPersonListItem}
+    />
+    
+    
+    <NumberedList 
+    items={people}
+    resourceName="person"
+    itemComponent={LargePersonListItem}
     />
 
     </>
@@ -29,6 +35,12 @@ const RightComponent = ({rightTitle}) => {
     <>
 
     <h1>{rightTitle}</h1>
+
+    <RegularList 
+      items={products}
+      resourceName="product"
+      itemComponent={SmallProductListItem}
+    />
 
     <NumberedList 
     items={products}
@@ -44,8 +56,8 @@ function App() {
   return (
     <>
       <SplitScreen leftWeight={1} rightWeight={3}>
-        <LeftComponent leftTitle="Small Regular List" />
-        <RightComponent rightTitle="Large Numbered List"/>
+        <LeftComponent leftTitle="People" />
+        <RightComponent rightTitle="Products"/>
       </SplitScreen>
 
     </>

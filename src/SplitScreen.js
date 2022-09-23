@@ -21,10 +21,16 @@ export function SplitScreen( props ) {
 
     return (
         <Container>
-            <Pane weight={leftWeight}>
+            <Pane 
+                weight={leftWeight} 
+                style={{backgroundColor: '#e9c46a'}}
+            >
                 {left}
             </Pane>
-            <Pane weight={rightWeight}>
+            <Pane 
+                weight={rightWeight}
+                style={{backgroundColor: '#dda15e'}}
+            >
                 {right}
             </Pane>
         </Container>
