@@ -1,6 +1,6 @@
 import './App.css';
 import { RegularList, NumberedList } from './models';
-import { SplitScreen } from './SplitScreen';
+import { SplitScreen } from './layout';
 import { SmallPersonListItem, LargePersonListItem } from './people'
 import { SmallProductListItem, LargeProductListItem} from './products';
 import { people, products } from './Lists';

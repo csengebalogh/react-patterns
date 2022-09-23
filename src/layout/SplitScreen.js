@@ -9,7 +9,7 @@ const Pane = styled.div`
     flex: ${props => props.weight}
 `
 
-export function SplitScreen( props ) {
+export default function SplitScreen( props ) {
 
     const {
         children,
