@@ -3,7 +3,7 @@ import { RegularList, NumberedList } from './models';
 import { SplitScreen, Modal } from './layout';
 import { SmallPersonListItem, UserInfo } from './people'
 import { SmallProductListItem, ProductInfo} from './products';
-import { people, products } from './Lists';
+import { users, products } from './Lists';
 
 const LeftComponent = ({leftTitle}) => {
   return (
@@ -12,15 +12,15 @@ const LeftComponent = ({leftTitle}) => {
     <h1>{leftTitle}</h1>
 
     <RegularList 
-      items={people}
+      items={users}
       resourceName="person"
       itemComponent={SmallPersonListItem}
     />
     
     
     <NumberedList 
-    items={people}
-    resourceName="person"
+    items={users}
+    resourceName="user"
     itemComponent={UserInfo}
     />
 
