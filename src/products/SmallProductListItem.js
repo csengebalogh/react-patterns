@@ -1,4 +1,4 @@
-export const SmallProductListItem = ({ product }) => {
+const SmallProductListItem = ({ product }) => {
     const { name, price } = product
 
     return (
@@ -8,3 +8,5 @@ export const SmallProductListItem = ({ product }) => {
         </>
     )
 }
+
+export default SmallProductListItem

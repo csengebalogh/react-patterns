@@ -6,7 +6,7 @@ export const people = [
         hobbies: ['swimming', 'fishing', 'writing']
     },
     {
-        name: 'Jane',
+        name: 'Jane Doe',
         age: 45,
         hairColor: 'red',
         hobbies: ['painting', 'gardening', 'reading']

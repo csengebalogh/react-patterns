@@ -1,12 +1,9 @@
 import './App.css';
-import { RegularList } from './RegularList';
-import { NumberedList } from './NumberedList';
+import { RegularList, NumberedList } from './models';
 import { SplitScreen } from './SplitScreen';
-import { SmallPersonListItem, } from './people/SmallPersonListItem';
-import { LargePersonListItem, } from './people/LargePersonListItem';
-import { SmallProductListItem, } from './products/SmallProductListItem';
+import { SmallPersonListItem, LargePersonListItem } from './people'
+import { SmallProductListItem, LargeProductListItem} from './products';
 import { people, products } from './Lists';
-import { LargeProductListItem } from './products/LargeProductListItem';
 
 const LeftComponent = ({leftTitle}) => {
   return (

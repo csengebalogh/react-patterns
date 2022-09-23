@@ -1,4 +1,4 @@
-export const LargePersonListItem = ({ person }) => {
+const LargePersonListItem = ({ person }) => {
     const { name, age, hairColor, hobbies } = person
 
     return (
@@ -14,3 +14,5 @@ export const LargePersonListItem = ({ person }) => {
         </>
     )
 }
+
+export default LargePersonListItem
