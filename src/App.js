@@ -1,6 +1,6 @@
 import './App.css';
 import { RegularList, NumberedList } from './models';
-import { SplitScreen } from './layout';
+import { SplitScreen, Modal } from './layout';
 import { SmallPersonListItem, LargePersonListItem } from './people'
 import { SmallProductListItem, LargeProductListItem} from './products';
 import { people, products } from './Lists';
@@ -39,11 +39,11 @@ const RightComponent = ({rightTitle}) => {
       itemComponent={SmallProductListItem}
     />
 
-    <NumberedList 
+    {/* <NumberedList 
     items={products}
     resourceName="product"
     itemComponent={LargeProductListItem}
-    />
+    /> */}
 
     </>
   )
@@ -52,6 +52,12 @@ const RightComponent = ({rightTitle}) => {
 function App() {
   return (
     <>
+
+    <Modal>
+      <LargeProductListItem product={products[0]}/>
+    </Modal>
+
+
       <SplitScreen leftWeight={1} rightWeight={3}>
         <LeftComponent leftTitle="People" />
         <RightComponent rightTitle="Products"/>
