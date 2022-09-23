@@ -1,9 +1,10 @@
 import './App.css';
 import { RegularList, NumberedList } from './models';
-import { SplitScreen, Modal, CurrentUserLoader } from './layout';
+import { SplitScreen, Modal, CurrentUserLoader, UserLoader } from './layout';
 import { SmallPersonListItem, UserInfo } from './people'
 import { SmallProductListItem, ProductInfo} from './products';
 import { users, products } from './Lists';
+import axios from 'axios'
 
 const LeftComponent = ({leftTitle}) => {
   return (
@@ -49,13 +50,22 @@ const RightComponent = ({rightTitle}) => {
   )
 }
 
+// this better be fetched from the server, then children loaded while response has next "line"
+const userIds = ['123', '234', '345']
+
 function App() {
   return (
     <>
 
-    <CurrentUserLoader>
-      <UserInfo />
-    </CurrentUserLoader>
+    {userIds.map(userId => {
+      return(
+        <UserLoader key={userId} userId={userId}>
+        <UserInfo />
+      </UserLoader>
+      )
+
+    })}
+
 
     <Modal>
       <ProductInfo product={products[0]}/>

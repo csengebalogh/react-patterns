@@ -7,6 +7,7 @@ app.use(express.json())
 // stored in DB somewhere
 
 let currentUser = {
+    id: '123',
     name: 'John Doe',
     age: 54,
     hairColor: 'brown',
@@ -15,18 +16,21 @@ let currentUser = {
 
 let users = [
     {
+        id: '123',
         name: 'John Doe',
         age: 54,
         hairColor: 'brown',
         hobbies: ['swimming', 'fishing', 'writing']
     },
     {
+        id: '234',
         name: 'Jane Doe',
         age: 45,
         hairColor: 'red',
         hobbies: ['painting', 'gardening', 'reading']
     },
     {
+        id: '345',
         name: 'Brenda Snow',
         age: 35,
         hairColor: 'gray',
@@ -36,18 +40,21 @@ let users = [
 
 const products = [
     {
+        id: '1234',
         name: "LG Flat Screen TV",
         price: '$300',
         desc: 'This is gonna change your life',
         rating: 3.5
     },
     {
+        id: '2345',
         name: "Apple iPhone 16 4353GB",
         price: '$3400',
         desc: 'What is even the point',
         rating: 3.1
     },
     {
+        id: '3456',
         name: "Sony Walkman",
         price: '$40',
         desc: 'Now we\'re talking',
