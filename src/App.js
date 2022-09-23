@@ -1,6 +1,6 @@
 import './App.css';
 import { RegularList, NumberedList } from './models';
-import { SplitScreen, Modal } from './layout';
+import { SplitScreen, Modal, CurrentUserLoader } from './layout';
 import { SmallPersonListItem, UserInfo } from './people'
 import { SmallProductListItem, ProductInfo} from './products';
 import { users, products } from './Lists';
@@ -53,15 +53,18 @@ function App() {
   return (
     <>
 
+    <CurrentUserLoader>
+      <UserInfo />
+    </CurrentUserLoader>
+
     <Modal>
       <ProductInfo product={products[0]}/>
     </Modal>
 
-
-      <SplitScreen leftWeight={1} rightWeight={3}>
-        <LeftComponent leftTitle="People" />
-        <RightComponent rightTitle="Products"/>
-      </SplitScreen>
+    <SplitScreen leftWeight={1} rightWeight={3}>
+      <LeftComponent leftTitle="People" />
+      <RightComponent rightTitle="Products"/>
+    </SplitScreen>
 
     </>
 

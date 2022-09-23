@@ -1,7 +1,7 @@
 const UserInfo = ({ user }) => {
-    const { name, age, hairColor, hobbies } = user
+    const { name, age, hairColor, hobbies } = user || {}
 
-    return (
+    return user ? (
         <>
             <h2>{name}</h2>
             <p>{age} years</p>
@@ -12,7 +12,7 @@ const UserInfo = ({ user }) => {
             </ul>
 
         </>
-    )
+    ) : <p>Loading...</p>
 }
 
 export default UserInfo
