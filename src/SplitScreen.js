@@ -6,23 +6,26 @@ const Container = styled.div`
 
 // left and right panes take up equal amounts of space
 const Pane = styled.div`
-    flex: 1;
+    flex: ${props => props.weight}
 `
 
 export function SplitScreen( props ) {
 
     const {
-        left: Left,
-        right: Right
+        children,
+        leftWeight,
+        rightWeight
     } = props
+
+    const [ left, right ] = children
 
     return (
         <Container>
-            <Pane style={{ backgroundColor: 'green'}}>
-                <Left /> 
+            <Pane weight={leftWeight}>
+                {left}
             </Pane>
-            <Pane>
-                <Right /> 
+            <Pane weight={rightWeight}>
+                {right}
             </Pane>
         </Container>
     )

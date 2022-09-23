@@ -1,19 +1,19 @@
 import './App.css';
 import { SplitScreen } from './SplitScreen';
 
-const LeftComponent = () => {
-  return <h1>Left!</h1>
+const LeftComponent = ({name}) => {
+  return <h1>{name}</h1>
 }
-const RightComponent = () => {
-  return <h1>Right!</h1>
+const RightComponent = ({message}) => {
+  return <h1>{message}</h1>
 }
 
 function App() {
   return (
-    <SplitScreen 
-        left={LeftComponent}
-        right={RightComponent}
-    />
+    <SplitScreen leftWeight={1} rightWeight={3}>
+      <LeftComponent name="John" />
+      <RightComponent message="Hello!"/>
+    </SplitScreen>
   );
 }
 
