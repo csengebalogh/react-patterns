@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const Container = styled.div`
-    display: flex;
+    display: flex
 `
 
 // left and right panes take up equal amounts of space

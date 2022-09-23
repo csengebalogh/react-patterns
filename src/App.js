@@ -1,19 +1,52 @@
 import './App.css';
+import { RegularList } from './RegularList';
 import { SplitScreen } from './SplitScreen';
+import { SmallPersonListItem, } from './people/SmallPersonListItem';
+import { LargePersonListItem, } from './people/LargePersonListItem';
+import { people } from './Lists';
 
-const LeftComponent = ({name}) => {
-  return <h1>{name}</h1>
+const LeftComponent = ({leftTitle}) => {
+  return (
+    <>
+
+    <h1>{leftTitle}</h1>
+    
+    
+    <RegularList 
+    items={people}
+    resourceName="person"
+    itemComponent={SmallPersonListItem}
+    />
+
+    </>
+  )
 }
-const RightComponent = ({message}) => {
-  return <h1>{message}</h1>
+const RightComponent = ({rightTitle}) => {
+  return (
+    <>
+
+    <h1>{rightTitle}</h1>
+
+    <RegularList 
+    items={people}
+    resourceName="person"
+    itemComponent={LargePersonListItem}
+    />
+
+    </>
+  )
 }
 
 function App() {
   return (
-    <SplitScreen leftWeight={1} rightWeight={3}>
-      <LeftComponent name="John" />
-      <RightComponent message="Hello!"/>
-    </SplitScreen>
+    <>
+      <SplitScreen leftWeight={1} rightWeight={3}>
+        <LeftComponent leftTitle="Small List" />
+        <RightComponent rightTitle="Large List"/>
+      </SplitScreen>
+
+    </>
+
   );
 }
 
