@@ -1,10 +1,10 @@
 import './App.css';
-import { RegularList, NumberedList } from './models';
-import { SplitScreen, Modal, ResourceLoader, UserLoader } from './layout';
+// import { RegularList, NumberedList } from './models';
+import { SplitScreen, Modal, ResourceLoader, DataSource } from './layout';
 import { SmallPersonListItem, UserInfo } from './people'
 import { SmallProductListItem, ProductInfo} from './products';
 import { users, products } from './Lists';
-import axios from 'axios'
+import axios from 'axios';
 
 const LeftComponent = ({leftTitle}) => {
   return (
@@ -25,9 +25,16 @@ const LeftComponent = ({leftTitle}) => {
     itemComponent={UserInfo}
     /> */}
 
-<ResourceLoader resourceURL='/users/234' resourceName='user'>
+    <DataSource 
+      getDataFunc={async () => {
+        const response = await axios.get(('/users/123'))
+
+        return response.data
+      }}
+      resourceName='user'
+    >
       <UserInfo />
-    </ResourceLoader>
+    </DataSource>
 
     </>
   )
@@ -51,9 +58,16 @@ const RightComponent = ({rightTitle}) => {
     /> */}
 
 
-    <ResourceLoader resourceURL='/products/2345' resourceName='product'>
+    <DataSource
+      getDataFunc={async () => {
+        const response = await axios.get('/products/3456')
+
+        return response.data
+      }}
+      resourceName='product'
+    >
       <ProductInfo />
-    </ResourceLoader>
+    </DataSource>
 
     </>
   )
