@@ -1,2 +1,2 @@
 export { default as SmallPersonListItem } from './SmallPersonListItem'
-export { default as LargePersonListItem } from './LargePersonListItem'
+export { default as UserInfo } from './LargePersonListItem'

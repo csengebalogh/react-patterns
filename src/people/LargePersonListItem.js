@@ -1,5 +1,5 @@
-const LargePersonListItem = ({ person }) => {
-    const { name, age, hairColor, hobbies } = person
+const UserInfo = ({ user }) => {
+    const { name, age, hairColor, hobbies } = user
 
     return (
         <>
@@ -15,4 +15,4 @@ const LargePersonListItem = ({ person }) => {
     )
 }
 
-export default LargePersonListItem
+export default UserInfo

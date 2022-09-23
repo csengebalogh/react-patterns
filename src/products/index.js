@@ -1,2 +1,2 @@
 export { default as SmallProductListItem } from './SmallProductListItem'
-export { default as LargeProductListItem } from './LargeProductListItem'
+export { default as ProductInfo } from './LargeProductListItem'

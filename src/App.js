@@ -1,8 +1,8 @@
 import './App.css';
 import { RegularList, NumberedList } from './models';
 import { SplitScreen, Modal } from './layout';
-import { SmallPersonListItem, LargePersonListItem } from './people'
-import { SmallProductListItem, LargeProductListItem} from './products';
+import { SmallPersonListItem, UserInfo } from './people'
+import { SmallProductListItem, ProductInfo} from './products';
 import { people, products } from './Lists';
 
 const LeftComponent = ({leftTitle}) => {
@@ -21,7 +21,7 @@ const LeftComponent = ({leftTitle}) => {
     <NumberedList 
     items={people}
     resourceName="person"
-    itemComponent={LargePersonListItem}
+    itemComponent={UserInfo}
     />
 
     </>
@@ -39,11 +39,11 @@ const RightComponent = ({rightTitle}) => {
       itemComponent={SmallProductListItem}
     />
 
-    {/* <NumberedList 
+    <NumberedList 
     items={products}
     resourceName="product"
-    itemComponent={LargeProductListItem}
-    /> */}
+    itemComponent={ProductInfo}
+    />
 
     </>
   )
@@ -54,7 +54,7 @@ function App() {
     <>
 
     <Modal>
-      <LargeProductListItem product={products[0]}/>
+      <ProductInfo product={products[0]}/>
     </Modal>
 
 
